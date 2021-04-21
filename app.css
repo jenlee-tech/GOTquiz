@@ -1,0 +1,61 @@
+html {
+line-height: 1.15;
+}
+
+
+
+
+main {
+  alignment: center;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+/*Media queries*/
+
+
+
+@media (min-width: 700px) {
+  body {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+
+
+@media (min-width: 1024px) {
+  /*
+  * A grid can do this math for you!
+  */
+  .box {
+    width: 29.33%;
+    float: left;
+    margin-right: 6%;
+  }
+  /*
+   * targeting every third '.box' to add a right margin
+   */
+  .box:nth-child(3n+3) {
+    margin-right: 0;
+  }
+}
+
+/*
+ * clearfix hack 
+ * https://css-tricks.com/snippets/css/clear-fix/
+ */
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
