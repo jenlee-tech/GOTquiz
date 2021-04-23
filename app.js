@@ -56,3 +56,26 @@ const store = {
   questionNumber: 0,
   score: 0
 };
+
+//render functions
+
+startQuiz = () => {
+
+}
+
+nextQuestion = () => {
+
+} 
+
+correctAnswer = () => {
+
+}
+
+endQuiz = () => {
+
+}
+
+
+
+
+
