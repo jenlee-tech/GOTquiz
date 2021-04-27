@@ -57,10 +57,17 @@ const store = {
   score: 0
 };
 
-//render functions
+//template generation functions
 
 startQuiz = () => {
-
+  return 
+    `
+    <div>
+      <h2>Entering the World of Westeros</h2>
+      <button id = "startButton">Start Quiz</button>
+    </div>
+    `
+    ;
 }
 
 nextQuestion = () => {
@@ -76,6 +83,5 @@ endQuiz = () => {
 }
 
 
-
-
-
+//Event Handeler functions
+document.getElementById("startButton").addEventListener("click", document.getElementById("mainpage").(STARTS THE QUIZ FUNCTION) 
