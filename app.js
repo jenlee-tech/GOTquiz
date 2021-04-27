@@ -64,7 +64,7 @@ startQuiz = () => {
     `
     <div>
       <h2>Entering the World of Westeros</h2>
-      <button id = "startButton">Start Quiz</button>
+      <button id="startButton">Start Quiz</button>
     </div>
     `
     ;
@@ -84,4 +84,6 @@ endQuiz = () => {
 
 
 //Event Handeler functions
-document.getElementById("startButton").addEventListener("click", document.getElementById("mainpage").(STARTS THE QUIZ FUNCTION) 
+//document.getElementById("startButton").addEventListener("click", document.getElementById("mainpage").(STARTS THE QUIZ FUNCTION) 
+
+$('main').on('click', '#startButton', function (event) {};
