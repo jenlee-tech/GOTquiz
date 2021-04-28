@@ -87,17 +87,23 @@ endQuiz = () => {
 
 //Render functions
 renderQuiz = () => {
-  console.log("rendering the quiz")
+  console.log("rendering the quiz");
   
 }
 
 
 
-//Event Handeler functions
-//document.getElementById("startButton").addEventListener("click", renderQuiz);
+
 
 
 window.onload = startQuiz();
+
+
+//Event Handeler functions - these functions could only work after the DOM has been fully loaded
+
+document.getElementById("startButton").addEventListener("click", renderQuiz());
+
+
 
 
 
