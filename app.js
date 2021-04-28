@@ -60,14 +60,16 @@ const store = {
 //template generation functions
 
 startQuiz = () => {
-  return 
-    `
+  console.log("this is working");
+  const startString = `
     <div>
       <h2>Entering the World of Westeros</h2>
       <button id="startButton">Start Quiz</button>
-    </div>
-    `
-    ;
+    </div>`;
+
+  
+  let main = document.getElementById('mainsection');
+  main.innerHTML = startString; 
 }
 
 nextQuestion = () => {
@@ -82,8 +84,19 @@ endQuiz = () => {
 
 }
 
+//Render functions
+renderQuiz = () => {
+  console.log("rendering the quiz")
+}
+
+
 
 //Event Handeler functions
-//document.getElementById("startButton").addEventListener("click", document.getElementById("mainpage").(STARTS THE QUIZ FUNCTION) 
+//document.getElementById("startButton").addEventListener("click", renderQuiz);
 
-$('main').on('click', '#startButton', function (event) {};
+
+startQuiz();
+console.log("testing");
+
+
+
