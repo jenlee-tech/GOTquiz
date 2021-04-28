@@ -65,7 +65,8 @@ startQuiz = () => {
     <div>
       <h2>Entering the World of Westeros</h2>
       <button id="startButton">Start Quiz</button>
-    </div>`;
+    </div>
+    `;
 
   
   let main = document.getElementById('mainsection');
@@ -87,6 +88,7 @@ endQuiz = () => {
 //Render functions
 renderQuiz = () => {
   console.log("rendering the quiz")
+  
 }
 
 
@@ -95,8 +97,8 @@ renderQuiz = () => {
 //document.getElementById("startButton").addEventListener("click", renderQuiz);
 
 
-startQuiz();
-console.log("testing");
+window.onload = startQuiz();
+
 
 
 
