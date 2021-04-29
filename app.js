@@ -60,7 +60,7 @@ const store = {
 //template generation functions
 
 startQuiz = () => {
-  console.log("this is working");
+  console.log("the start page is working");
   const startString = `
     <div>
       <h2>Entering the World of Westeros</h2>
@@ -72,8 +72,15 @@ startQuiz = () => {
   let main = document.getElementById('mainsection');
   main.innerHTML = startString; 
 }
+      
+    // Question number
+    // Question
+    // Answers
+    // Score
+
 
 nextQuestion = () => {
+  
 
 } 
 
@@ -88,6 +95,23 @@ endQuiz = () => {
 //Render functions
 renderQuiz = () => {
   console.log("rendering the quiz");
+  // let nextString = `
+  //   <div>
+      
+  //     <p>Question 1 </p>
+       for (let i = 0; i < store.questions.length; i++) {
+        console.log(store.questions[i].question)
+      }
+
+  //   <p>Score: 0/5 </p>
+
+
+
+
+
+  //  </div>
+  
+  
   
 };
 
