@@ -64,7 +64,7 @@ startQuiz = () => {
   const startString = `
     <div>
       <h2>Entering the World of Westeros</h2>
-      <button id="startButton">Start Quiz</button>
+      <button type="submit" id="startButton">Start Quiz</button>
     </div>
     `;
 
@@ -89,7 +89,7 @@ endQuiz = () => {
 renderQuiz = () => {
   console.log("rendering the quiz");
   
-}
+};
 
 
 
@@ -101,7 +101,7 @@ window.onload = startQuiz();
 
 //Event Handeler functions - these functions could only work after the DOM has been fully loaded
 
-document.getElementById("startButton").addEventListener("click", renderQuiz());
+document.getElementById("startButton").addEventListener("click", renderQuiz);
 
 
 
