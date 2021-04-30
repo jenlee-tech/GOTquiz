@@ -74,9 +74,25 @@ startQuiz = () => {
 }
       
     // Question number
+questionTemplate = () => {
+  let questionString = `
+  <div>
+    Question $store.questionNumber/5
+  </div>
+  `;
+}
+scoreTemplate = () => {
+  let scoreString = `
+    <div>
+      Score: $score
+    </div>
+    `;
+}
+
+
     // Question
     // Answers
-    // Score
+    
 
 
 nextQuestion = () => {
