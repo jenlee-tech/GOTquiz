@@ -73,14 +73,16 @@ startQuiz = () => {
   main.innerHTML = startString; 
 }
       
-    // Question number
-questionTemplate = () => {
-  let questionString = `
+// Question number
+questionCounterTemplate = () => {
+  let questionCounterString = `
   <div>
-    Question $store.questionNumber/5
+    Question: $store.questions/5
   </div>
   `;
 }
+
+//score
 scoreTemplate = () => {
   let scoreString = `
     <div>
@@ -90,10 +92,24 @@ scoreTemplate = () => {
 }
 
 
-    // Question
-    // Answers
-    
+// Question 
+Question = () => {
+let questionString =
+    `
+    <div>
+    // actual question
+    </div>
+    `
+    }
+// Answers - maps through the array of answers
+answer = () => {
+let answerChoices = 
+    `  
+    <ul>
 
+    </ul>  
+    `
+}
 
 nextQuestion = () => {
   
