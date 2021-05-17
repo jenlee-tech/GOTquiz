@@ -1,5 +1,6 @@
 User stories:
 1. The user can click on the Start Quiz button and it will start the quiz.
+    * There is an event handeler that listens for the click which starts the quiz.
 
 2. The user will see one question per page with 4 choices to choose from and there will be a submit button.  On the top of the page, it will show which question the user is on and what their current score is.
 
