@@ -10,6 +10,12 @@ body {
     box-sizing: border-box;
 }
 
+ul {
+    list-style: none;
+    text-align: left;
+    margin-left: 20%;
+}
+
 
 /*Media queries*/
 

@@ -2,7 +2,12 @@ User stories:
 1. The user can click on the Start Quiz button and it will start the quiz.
     * There is an event handeler that listens for the click which starts the quiz.
 
-2. The user will see one question per page with 4 choices to choose from and there will be a submit button.  On the top of the page, it will show which question the user is on and what their current score is.
+2. The user will see
+    * one question per page 
+    * with 4 choices to choose from 
+    * and there will be a submit button.  
+    * On the top of the page, it will show which question the user is on 
+    * and what their current score is.
 
 3. Once the user clicks on the Submit button, it will show if its a correct answer or the wrong answer. 
 Great, it is correct.  The answer is _____.
@@ -10,4 +15,9 @@ No, that is not correct.  The answer is ______.
 It will also show, next button.
 
 4. The user will reach to the last page - show the final score and show the restart button.  The restart button will start the quiz again.
+
+5. Style app
+    * choose a font style
+    * get game of thrones pic(s)
+    * 
 

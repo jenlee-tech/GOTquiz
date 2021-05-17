@@ -102,14 +102,7 @@ Question = () => {
    */ 
     }
 // Answers - maps through the array of answers
-answer = () => {
-return  
-    `  
-    <ul>
 
-    </ul>  
-    `
-}
 
 nextQuestion = () => {
   
@@ -128,16 +121,32 @@ endQuiz = () => {
 renderQuiz = () => {
   console.log("rendering the quiz");
   //question
-  let questionString = 
+  let questionAndanswers = 
   `
   <div>
     ${store.questions[store.questionNumber].question}
-  </div>  
- 
+  </div> 
   
-`
+  <div>
+    <ul class="answer-list">
+      ${store.questions[store.questionNumber].answers.map((answerkey, i) => 
+        `<li>
+          <input type="radio" id="${i}" name="answerkey" value="${i}">
+          <label for="${i}">${answerkey}</label>
+          </li>`).join("")
+        }
+    </ul>
+  </div>
+
+  
+
+  
+
+
+`;
+
 let main = document.getElementById('mainsection');
-  main.innerHTML = questionString;
+main.innerHTML = questionAndanswers;
 
 };
 // //
