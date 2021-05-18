@@ -6,8 +6,19 @@ User stories:
     * one question per page 
     * with 4 choices to choose from 
     * and there will be a submit button.  
+        * event handeler needs to be made for the button.
+            * the event will check the logic
+            * if it correct, 
+                    * then increase the score
+                    * then states happy message
+                if it not correct,
+                    * then don't change the score
+                    * then state unhappy message (maybe let them know the correct answer)
+            * increase questionNumber (so that it proceeds to the next question)   
+
+            
     * On the top of the page, it will show which question the user is on 
-    * and what their current score is.
+    * and their current score.
 
 3. Once the user clicks on the Submit button, it will show if its a correct answer or the wrong answer. 
 Great, it is correct.  The answer is _____.

@@ -90,7 +90,22 @@ scoreTemplate = () => {
     </div>
     `;
 }
+// //**check answers if it is correct
+//   if inputAnswer = ${store.questions[store.questionNumber].correctAnswer}
+//   correctAnswer
 
+
+//get input value
+let getInputValue = () => {
+  let radios = document.getElementsByName('answerkey');
+  for (let i=0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      let inputValue = radios[i].value;
+      console.log(inputValue)
+      break;
+    }
+  }
+}
 
 // Question 
 Question = () => {
@@ -131,10 +146,12 @@ renderQuiz = () => {
     <ul class="answer-list">
       ${store.questions[store.questionNumber].answers.map((answerkey, i) => 
         `<li>
-          <input type="radio" id="${i}" name="answerkey" value="${i}">
+          <input type="radio" id="${i}" name="answerkey" value="${answerkey}">
           <label for="${i}">${answerkey}</label>
           </li>`).join("")
         }
+
+        <button type = "button" onclick = "getInputValue();">Submit</button>
     </ul>
   </div>
 
@@ -190,10 +207,6 @@ window.onload = firstPage();
 //Event Handeler functions - these functions could only work after the DOM has been fully loaded
 
 document.getElementById("startButton").addEventListener("click", renderQuiz);
-
-
-
-
 
 
 
