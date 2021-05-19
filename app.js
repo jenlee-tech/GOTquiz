@@ -96,15 +96,26 @@ scoreTemplate = () => {
 
 
 //get input value
-let getInputValue = () => {
+let inputValue;
+getInputValue = () => {
   let radios = document.getElementsByName('answerkey');
   for (let i=0; i < radios.length; i++) {
     if (radios[i].checked) {
-      let inputValue = radios[i].value;
+      inputValue = radios[i].value;
       console.log(inputValue)
       break;
     }
   }
+}
+
+checkInput = () => {
+  console.log(inputValue);
+ 
+        if (inputValue == store.questions[store.questionNumber].correctAnswer) {
+          console.log("this is correct")
+        }
+        else
+          {console.log("this is not correct")}
 }
 
 // Question 
@@ -135,6 +146,7 @@ endQuiz = () => {
 //Render functions
 renderQuiz = () => {
   console.log("rendering the quiz");
+  store.quizStarted = true;
   //question
   let questionAndanswers = 
   `
