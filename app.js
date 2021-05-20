@@ -108,13 +108,21 @@ getInputValue = () => {
   }
 }
 
+//create a function that includes other functions after an user clicks the submit button after clicking the submit button.
+
+checkAnswer = () => {
+  getInputValue();
+  checkInput();
+
+}
+
 checkInput = () => {
   console.log(inputValue);
         console.log("The current question is  and answer " + store.questions[store.questionNumber].correctAnswer);
         if (inputValue == store.questions[store.questionNumber].correctAnswer) {
-          console.log("Awesome you answered correctly!")
+          correctAnswer();
           store.score++
-          
+                   
         }
         else
           {console.log("this is not correct")}
@@ -138,6 +146,18 @@ nextQuestion = () => {
 } 
 
 correctAnswer = () => {
+    console.log("letting the user know they answered correctly");
+    let answeredRightString = `
+      <div>
+        <h2>Awesome!  You choosed correctly.</h2>
+        <h3>The answer is ${store.questions[store.questionNumber].correctAnswer}</h3>
+        <button type="submit" id="nextButton">Next</button>
+      </div>
+      `;
+  
+    let main = document.getElementById('mainsection');
+    main.innerHTML = answeredRightString; 
+  
 
 }
 
