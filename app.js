@@ -111,18 +111,23 @@ getInputValue = () => {
 //create a function that includes other functions after an user clicks the submit button after clicking the submit button.
 
 checkAnswer = () => {
+  console.log(store.questioNumber)
   getInputValue();
   checkInput();
+  //store.questionNumber++;
+  console.log("this is the question number " + store.questionNumber +  " after the checks")
 
 }
 
 checkInput = () => {
   console.log(inputValue);
-        console.log("The current question is  and answer " + store.questions[store.questionNumber].correctAnswer);
+        console.log("The current question is " + store.questionNumber + " and the answer is " + store.questions[store.questionNumber].correctAnswer);
+
         if (inputValue == store.questions[store.questionNumber].correctAnswer) {
+          console.log("you answered it right!")
           correctAnswer();
           store.score++
-                   
+               
         }
         else
           {console.log("this is not correct")}
@@ -147,6 +152,7 @@ nextQuestion = () => {
 
 correctAnswer = () => {
     console.log("letting the user know they answered correctly");
+    
     let answeredRightString = `
       <div>
         <h2>Awesome!  You choosed correctly.</h2>
@@ -155,7 +161,7 @@ correctAnswer = () => {
       </div>
       `;
   
-    let main = document.getElementById('mainsection');
+    
     main.innerHTML = answeredRightString; 
   
 
@@ -184,9 +190,8 @@ renderQuiz = () => {
           <label for="${i}">${answerkey}</label>
           </li>`).join("")
         }
-
-        <button type = "button" onclick = "getInputValue();">Submit</button>
     </ul>
+    <button type = "button" onclick = "checkAnswer()">Submit</button>
   </div>
 
   
@@ -200,32 +205,6 @@ let main = document.getElementById('mainsection');
 main.innerHTML = questionAndanswers;
 
 };
-// //
-// return `
-//   <div>
-//     <ul>
-//     {$store.questions[i].answers.forEach(element => 
-//       innnerHTML = `<li>element</li>`)
-//     }
-//     </ul>
-//   </div>
-// `
-// *//
-  /*     <p>Question 1 </p>
-       for (let i = 0; i < store.questions.length; i++) {
-          console.log(store.questions[i].question)
-      }
-
-  */
-
-  
-
-
-
-
-
-  //  </div>
-  
   
   
 
