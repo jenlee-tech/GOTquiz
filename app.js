@@ -110,9 +110,11 @@ getInputValue = () => {
 
 checkInput = () => {
   console.log(inputValue);
- 
+        console.log("The current question is  and answer " + store.questions[store.questionNumber].correctAnswer);
         if (inputValue == store.questions[store.questionNumber].correctAnswer) {
-          console.log("this is correct")
+          console.log("Awesome you answered correctly!")
+          store.score++
+          
         }
         else
           {console.log("this is not correct")}
