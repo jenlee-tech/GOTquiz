@@ -57,6 +57,9 @@ const store = {
   score: 0
 };
 
+//establishing global variables
+let main = document.getElementById('mainsection');
+
 //template generation functions
 
 firstPage = () => {
@@ -69,7 +72,7 @@ firstPage = () => {
     `;
 
   
-  let main = document.getElementById('mainsection');
+  
   main.innerHTML = startString; 
 }
       
@@ -133,16 +136,7 @@ checkInput = () => {
           {console.log("this is not correct")}
 }
 
-// Question 
-Question = () => {
-/* let questionString =
-    `
-    <div>
-    // actual question
-    </div>
-   */ 
-    }
-// Answers - maps through the array of answers
+
 
 
 nextQuestion = () => {
@@ -157,11 +151,11 @@ correctAnswer = () => {
       <div>
         <h2>Awesome!  You choosed correctly.</h2>
         <h3>The answer is ${store.questions[store.questionNumber].correctAnswer}</h3>
-        <button type="submit" id="nextButton">Next</button>
+        <button type="submit" id="nextButton">Next Question</button>
       </div>
       `;
   
-    
+    main.innerHTML = "";
     main.innerHTML = answeredRightString; 
   
 
