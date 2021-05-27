@@ -61,7 +61,6 @@ const store = {
 let main = document.getElementById('mainsection');
 
 //template generation functions
-
 firstPage = () => {
   console.log("the first page is working");
   const startString = `
@@ -70,9 +69,6 @@ firstPage = () => {
       <button type="submit" id="startButton">Start Quiz</button>
     </div>
     `;
-
-  
-  
   main.innerHTML = startString; 
 }
       
@@ -98,7 +94,7 @@ scoreTemplate = () => {
 //   correctAnswer
 
 
-//get input value
+//get input value from user's selection
 let inputValue;
 getInputValue = () => {
   let radios = document.getElementsByName('answerkey');
