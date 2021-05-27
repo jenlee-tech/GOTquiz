@@ -113,7 +113,7 @@ checkAnswer = () => {
   console.log(store.questioNumber)
   getInputValue();
   checkInput();
-  //store.questionNumber++;
+  store.questionNumber++;
   console.log("this is the question number " + store.questionNumber +  " after the checks")
 
 }
@@ -129,7 +129,7 @@ checkInput = () => {
                
         }
         else
-          {console.log("this is not correct")}
+          incorrectAnswer();
 }
 
 
@@ -153,9 +153,24 @@ correctAnswer = () => {
   
     main.innerHTML = "";
     main.innerHTML = answeredRightString; 
+}
+
+incorrectAnswer = () => {
+  console.log("letting the user know they did not answered correctly");
+    
+    let answeredWrongString = `
+      <div>
+        <h2>Incorrect Answer....</h2>
+        <h3>The answer is really ${store.questions[store.questionNumber].correctAnswer}</h3>
+        <button type="submit" id="nextButton">Next Question</button>
+      </div>
+      `;
   
+    main.innerHTML = "";
+    main.innerHTML = answeredWrongString; 
 
 }
+
 
 endQuiz = () => {
 
@@ -191,7 +206,7 @@ renderQuiz = () => {
 
 `;
 
-let main = document.getElementById('mainsection');
+
 main.innerHTML = questionAndanswers;
 
 };
