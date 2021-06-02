@@ -57,6 +57,9 @@ const store = {
   score: 0
 };
 
+
+
+
 //establishing global variables
 let main = document.getElementById('mainsection');
 
@@ -153,6 +156,7 @@ correctAnswer = () => {
   
     main.innerHTML = "";
     main.innerHTML = answeredRightString; 
+    document.getElementById("nextButton").addEventListener("click", renderQuiz);
 }
 
 incorrectAnswer = () => {
@@ -168,8 +172,9 @@ incorrectAnswer = () => {
   
     main.innerHTML = "";
     main.innerHTML = answeredWrongString; 
-
+    document.getElementById("nextButton").addEventListener("click", renderQuiz);
 }
+
 
 
 endQuiz = () => {
@@ -196,18 +201,11 @@ renderQuiz = () => {
           </li>`).join("")
         }
     </ul>
-    <button type = "button" onclick = "checkAnswer()">Submit</button>
+    <button type = "button" id="checkButton">Submit</button>
   </div>
-
-  
-
-  
-
-
 `;
-
-
 main.innerHTML = questionAndanswers;
+document.getElementById("checkButton").addEventListener("click", checkAnswer);
 
 };
   
@@ -219,12 +217,16 @@ main.innerHTML = questionAndanswers;
 
 
 
+
 window.onload = firstPage();
 
-
 //Event Handeler functions - these functions could only work after the DOM has been fully loaded
-
 document.getElementById("startButton").addEventListener("click", renderQuiz);
+
+
+
+
+
 
 
 

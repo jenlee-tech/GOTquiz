@@ -9,16 +9,15 @@ User stories:
         * event handeler needs to be made for the button.
             * capture the value from a radio button
             * the event will check the logic
-            
-                * if it correct, 
+                 * if it correct, 
                         * then increase the score
                         * then states happy message
-                    if it not correct,
+                 * if it not correct,
                         * then don't change the score
                         * then state unhappy message (maybe let them know the correct answer)
                 * increase questionNumber (so that it proceeds to the next question)   
 
-            
+                * Create an event handeler for the Next button which should proceed to the next question.
     * On the top of the page, it will show which question the user is on 
     * and their current score.
 
