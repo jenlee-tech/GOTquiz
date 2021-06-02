@@ -21,14 +21,14 @@ User stories:
     * On the top of the page, it will show which question the user is on 
     * and their current score.
 
-3. Once the user clicks on the Submit button, it will show if its a correct answer or the wrong answer. 
-Great, it is correct.  The answer is _____.
-No, that is not correct.  The answer is ______.
-It will also show, next button.
 
-4. The user will reach to the last page - show the final score and show the restart button.  The restart button will start the quiz again.
+3. The user will reach to the last page - show the final score and show the restart button.  The restart button will start the quiz again.
 
-5. Style app
+    When the questionNumber = 5, then there should be a final page showing:
+        * final score
+        * restart quiz button
+
+4. Style app
     * choose a font style
     * get game of thrones pic(s)
     * 

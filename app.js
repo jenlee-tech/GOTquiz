@@ -88,7 +88,7 @@ questionCounterTemplate = () => {
 scoreTemplate = () => {
   return `
     <div>
-      Score: $score
+      Score: store.score/100
     </div>
     `;
 }
@@ -128,7 +128,7 @@ checkInput = () => {
         if (inputValue == store.questions[store.questionNumber].correctAnswer) {
           console.log("you answered it right!")
           correctAnswer();
-          store.score++
+          store.score=store.score+20;
                
         }
         else
@@ -188,6 +188,10 @@ renderQuiz = () => {
   //question
   let questionAndanswers = 
   `
+  <div>
+  Question: ${store.questionNumber+1}/5
+  </div>
+
   <div>
     ${store.questions[store.questionNumber].question}
   </div> 
