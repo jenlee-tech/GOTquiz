@@ -117,7 +117,7 @@ checkAnswer = () => {
   getInputValue();
   checkInput();
   store.questionNumber++;
-  console.log("this is the question number " + store.questionNumber +  " after the checks")
+  console.log("this is question number " + store.questionNumber +  " after the checks")
 
 }
 
@@ -156,7 +156,7 @@ correctAnswer = () => {
   
     main.innerHTML = "";
     main.innerHTML = answeredRightString; 
-    document.getElementById("nextButton").addEventListener("click", renderQuiz);
+    document.getElementById("nextButton").addEventListener("click", checkQuestionNumber);
 }
 
 incorrectAnswer = () => {
@@ -172,12 +172,33 @@ incorrectAnswer = () => {
   
     main.innerHTML = "";
     main.innerHTML = answeredWrongString; 
-    document.getElementById("nextButton").addEventListener("click", renderQuiz);
+    document.getElementById("nextButton").addEventListener("click", checkQuestionNumber);
+}
+
+checkQuestionNumber = () => {
+  if (store.questionNumber == 5) {
+    endQuiz();
+  }
+  else 
+    renderQuiz();
 }
 
 
 
 endQuiz = () => {
+  let endquizMessage = 
+  `
+  <div>
+    You have reached the end of the quiz.  
+    Your final score: ${store.score}/100 
+  </div>  
+  <div>
+    <button type="button" id="restartbutton">Restart</button>
+  </div>
+   
+  `
+  main.innerHTML = endquizMessage;
+document.getElementById("restartbutton").addEventListener("click", restartQuiz);
 
 }
 
@@ -186,9 +207,10 @@ renderQuiz = () => {
   console.log("rendering the quiz");
   store.quizStarted = true;
   //question
+  
   let questionAndanswers = 
   `
-  <div>
+  <div id="Question">
   Question: ${store.questionNumber+1}/5
   </div>
 
@@ -207,6 +229,11 @@ renderQuiz = () => {
     </ul>
     <button type = "button" id="checkButton">Submit</button>
   </div>
+
+  <div id="score">
+    Current score: ${store.score}/100
+  </div>
+
 `;
 main.innerHTML = questionAndanswers;
 document.getElementById("checkButton").addEventListener("click", checkAnswer);

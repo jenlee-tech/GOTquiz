@@ -16,6 +16,18 @@ ul {
     margin-left: 20%;
 }
 
+#Question {
+    padding-bottom: 5%;
+}
+
+#score {
+    padding-top: 5%;
+}
+
+#restartbutton {
+    margin-top: 5%;
+}
+
 
 /*Media queries*/
 
