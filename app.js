@@ -68,11 +68,11 @@ firstPage = () => {
   console.log("the first page is working");
   const startString = `
     <div>
-      <h2>Entering the World of Westeros</h2>
-      <button type="submit" id="startButton">Start Quiz</button>
+       <button type="submit" id="startButton">Start Quiz</button>
     </div>
     `;
   main.innerHTML = startString; 
+  document.getElementById("startButton").addEventListener("click", renderQuiz);
 }
       
 // Question number
@@ -202,6 +202,7 @@ document.getElementById("restartbutton").addEventListener("click", restartQuiz);
 
 }
 
+
 //Render functions
 renderQuiz = () => {
   console.log("rendering the quiz");
@@ -242,7 +243,13 @@ document.getElementById("checkButton").addEventListener("click", checkAnswer);
   
   
 
-
+//resets all the settings and takes you back to firstpage
+restartQuiz = () => {
+  store.questionNumber = 0;
+  store.quizStarted = false;
+  store.score = 0;
+  firstPage();
+}
 
 
 
@@ -252,7 +259,9 @@ document.getElementById("checkButton").addEventListener("click", checkAnswer);
 window.onload = firstPage();
 
 //Event Handeler functions - these functions could only work after the DOM has been fully loaded
-document.getElementById("startButton").addEventListener("click", renderQuiz);
+
+
+
 
 
 

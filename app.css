@@ -4,6 +4,16 @@ html {
 
 body {
     text-align: center;
+    background-image: url("forest.jpg");
+    background-position: center;
+    filter: grayscale(100%);
+}
+
+header {
+    opacity: .85;
+    background: white;
+    margin-bottom: 5%;
+    padding-bottom: 2%;
 }
 
 * {
@@ -66,3 +76,8 @@ ul {
     display: table;
     clear: both;
 }
+
+
+/** Photo details:
+Photo by <a href="https://unsplash.com/@kmitchhodge?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">K. Mitch Hodge</a> on <a href="https://unsplash.com/s/photos/game-of-thrones?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+**/
