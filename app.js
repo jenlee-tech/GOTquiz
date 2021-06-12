@@ -71,7 +71,7 @@ firstPage = () => {
        <button type="submit" id="startButton">Start Quiz</button>
     </div>
     `;
-  main.innerHTML = startString; 
+  document.getElementById("start").innerHTML = startString;
   document.getElementById("startButton").addEventListener("click", renderQuiz);
 }
       
@@ -207,6 +207,7 @@ document.getElementById("restartbutton").addEventListener("click", restartQuiz);
 renderQuiz = () => {
   console.log("rendering the quiz");
   store.quizStarted = true;
+ document.getElementById("start").innerHTML = "";
   //question
   
   let questionAndanswers = 
@@ -236,7 +237,7 @@ renderQuiz = () => {
   </div>
 
 `;
-main.innerHTML = questionAndanswers;
+main.innerHTML=questionAndanswers;
 document.getElementById("checkButton").addEventListener("click", checkAnswer);
 
 };
