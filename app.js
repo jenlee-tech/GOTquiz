@@ -104,15 +104,20 @@ getInputValue = () => {
   for (let i=0; i < radios.length; i++) {
     if (radios[i].checked) {
       inputValue = radios[i].value;
-      console.log(inputValue)
-      break;
-    }
-  }
-}
+      console.log(inputValue);
+      return inputValue;
+      }
+    };
+  
+  };
+
+
+
 
 //create a function that includes other functions after an user clicks the submit button after clicking the submit button.
 
 checkAnswer = () => {
+  
   console.log(store.questioNumber)
   getInputValue();
   checkInput();
@@ -221,15 +226,18 @@ renderQuiz = () => {
   </div> 
   
   <div>
-    <ul class="answer-list">
-      ${store.questions[store.questionNumber].answers.map((answerkey, i) => 
-        `<li>
-          <input type="radio" id="${i}" name="answerkey" value="${answerkey}">
-          <label for="${i}">${answerkey}</label>
-          </li>`).join("")
-        }
-    </ul>
-    <button type = "button" id="checkButton">Submit</button>
+    <form id="answerForm">
+      <ul class="answer-list">
+        ${store.questions[store.questionNumber].answers.map((answerkey, i) => 
+          `<li>
+            <input type="radio" id="${i}" name="answerkey" value="${answerkey}" required="required" />
+            <label for="${i}">${answerkey}</label>
+            </li>`).join("")
+          }
+      </ul>
+      <button type="submit" id="checkButton">Submit</button>
+      
+    </form>
   </div>
 
   <div id="score">
@@ -238,7 +246,9 @@ renderQuiz = () => {
 
 `;
 main.innerHTML=questionAndanswers;
-document.getElementById("checkButton").addEventListener("click", checkAnswer);
+document.getElementById("answerForm").addEventListener("submit", checkAnswer);
+
+
 
 };
   
