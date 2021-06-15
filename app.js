@@ -65,6 +65,7 @@ let main = document.getElementById('mainsection');
 
 //template generation functions
 firstPage = () => {
+  document.getElementById("mainsection").innerHTML = "";
   console.log("the first page is working");
   const startString = `
     <div>
@@ -193,7 +194,7 @@ checkQuestionNumber = () => {
 endQuiz = () => {
   let endquizMessage = 
   `
-  <div>
+  <div id="finalScore">
     You have reached the end of the quiz.  
     Your final score: ${store.score}/100 
   </div>  

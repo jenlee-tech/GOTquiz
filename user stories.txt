@@ -28,6 +28,12 @@ User stories:
         * final score
         * restart quiz button
 
+4. When the restart button is clicked, then the quiz will start over again,         
+    * the final score should be gone.
+    * everything should be reset:
+        * score
+        * 
+
 4. Style app
     * choose a font style
     * get game of thrones pic(s)
