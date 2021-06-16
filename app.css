@@ -29,6 +29,7 @@ header {
     border-radius: 25px;
     width: 65%;
     display: inline-block;
+    font-size: 1.3em;
 }
 
 * {
@@ -43,6 +44,7 @@ ul {
 
 #Question {
     padding-bottom: 5%;
+    font-size: 1.1em;
 }
 
 #score {
