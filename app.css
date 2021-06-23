@@ -30,6 +30,8 @@ header {
     width: 65%;
     display: inline-block;
     font-size: 1.3em;
+    padding-bottom: 3%;
+    padding-top: 1%;
 }
 
 * {
@@ -42,13 +44,24 @@ ul {
     margin-left: 20%;
 }
 
-#Question {
-    padding-bottom: 5%;
-    font-size: 1.1em;
+#status {
+    display: flex;
+    justify-content: space-between;
+}
+
+#questionumber {
+    padding-top: 2%;
+    padding-left: 2%
 }
 
 #score {
+    padding-top: 2%;
+    padding-right: 2%;
+}
+
+#question {
     padding-top: 5%;
+    padding-bottom: 3%;
 }
 
 #restartbutton {

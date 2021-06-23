@@ -218,11 +218,17 @@ renderQuiz = () => {
   
   let questionAndanswers = 
   `
-  <div id="Question">
-  Question: ${store.questionNumber+1}/5
+  <div id = "status">
+      <div id="questionumber">
+      Question: ${store.questionNumber+1}/5
+      </div>
+
+      <div id="score">
+        Current score: ${store.score}/100
+      </div>
   </div>
 
-  <div>
+  <div id= "question">
     ${store.questions[store.questionNumber].question}
   </div> 
   
@@ -241,9 +247,7 @@ renderQuiz = () => {
     </form>
   </div>
 
-  <div id="score">
-    Current score: ${store.score}/100
-  </div>
+  
 
 `;
 main.innerHTML=questionAndanswers;
