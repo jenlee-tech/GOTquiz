@@ -65,7 +65,8 @@ let main = document.getElementById('mainsection');
 
 //template generation functions
 firstPage = () => {
-  document.getElementById("mainsection").innerHTML = "";
+  main.style.opacity=0;
+  main.innerHTML = "";
   console.log("the first page is working");
   const startString = `
     <div>
@@ -211,9 +212,10 @@ document.getElementById("restartbutton").addEventListener("click", restartQuiz);
 
 //Render functions
 renderQuiz = () => {
+  main.style.opacity=.85;
   console.log("rendering the quiz");
   store.quizStarted = true;
- document.getElementById("start").innerHTML = "";
+  document.getElementById("start").innerHTML = "";
   //question
   
   let questionAndanswers = 
