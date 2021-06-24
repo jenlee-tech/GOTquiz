@@ -32,6 +32,7 @@ header {
     font-size: 1.3em;
     padding-bottom: 3%;
     padding-top: 1%;
+    font-weight: 600;
 }
 
 * {
@@ -42,6 +43,7 @@ ul {
     list-style: none;
     text-align: left;
     margin-left: 20%;
+    font-size: 130%;
 }
 
 #status {
@@ -61,7 +63,8 @@ ul {
 
 #question {
     padding-top: 5%;
-    padding-bottom: 3%;
+    padding-bottom: 2%;
+    font-size: 150%;
 }
 
 #restartbutton {
