@@ -67,7 +67,6 @@ let main = document.getElementById('mainsection');
 firstPage = () => {
   main.style.opacity=0;
   main.innerHTML = "";
-  console.log("the first page is working");
   const startString = `
     <div>
        <button type="submit" id="startButton">Start Quiz</button>
@@ -86,73 +85,38 @@ questionCounterTemplate = () => {
   `;
 }
 
-//score
-scoreTemplate = () => {
-  return `
-    <div>
-      Score: store.score/100
-    </div>
-    `;
-}
-// //**check answers if it is correct
-//   if inputAnswer = ${store.questions[store.questionNumber].correctAnswer}
-//   correctAnswer
-
-
-//get input value from user's selection
+//gets input value from user's selection
 let inputValue;
 getInputValue = () => {
   let radios = document.getElementsByName('answerkey');
   for (let i=0; i < radios.length; i++) {
     if (radios[i].checked) {
       inputValue = radios[i].value;
-      console.log(inputValue);
       return inputValue;
       }
     };
-  
-  };
+};
 
-
-
-
-//create a function that includes other functions after an user clicks the submit button after clicking the submit button.
-
+//function gets the value, checks the answer and proceeds to the next question.
 checkAnswer = () => {
-  
-  console.log(store.questioNumber)
   getInputValue();
   checkInput();
   store.questionNumber++;
-  console.log("this is question number " + store.questionNumber +  " after the checks")
-
 }
 
+//functions checks the answer and provides feedback
 checkInput = () => {
-  console.log(inputValue);
-        console.log("The current question is " + store.questionNumber + " and the answer is " + store.questions[store.questionNumber].correctAnswer);
-
-        if (inputValue == store.questions[store.questionNumber].correctAnswer) {
-          console.log("you answered it right!")
-          correctAnswer();
-          store.score=store.score+20;
-               
-        }
-        else
-          incorrectAnswer();
+    if (inputValue == store.questions[store.questionNumber].correctAnswer) {
+      correctAnswer();
+      store.score=store.score+20;
+    }
+    else
+      incorrectAnswer();
 }
 
 
-
-
-nextQuestion = () => {
-  
-
-} 
-
+//informs the user they answered correctly
 correctAnswer = () => {
-    console.log("letting the user know they answered correctly");
-    
     let answeredRightString = `
       <div>
         <h2>Awesome!  You choosed correctly.</h2>
@@ -166,17 +130,16 @@ correctAnswer = () => {
     document.getElementById("nextButton").addEventListener("click", checkQuestionNumber);
 }
 
+//informs the user he/she answered incorrectly
 incorrectAnswer = () => {
-  console.log("letting the user know they did not answered correctly");
-    
-    let answeredWrongString = `
+    let answeredWrongString = 
+    `
       <div>
         <h2>Incorrect Answer....</h2>
         <h3>The answer is really ${store.questions[store.questionNumber].correctAnswer}</h3>
         <button type="submit" id="nextButton">Next Question</button>
       </div>
-      `;
-  
+    `;
     main.innerHTML = "";
     main.innerHTML = answeredWrongString; 
     document.getElementById("nextButton").addEventListener("click", checkQuestionNumber);
@@ -190,73 +153,60 @@ checkQuestionNumber = () => {
     renderQuiz();
 }
 
-
-
 endQuiz = () => {
   let endquizMessage = 
-  `
-  <div id="finalScore">
-    You have reached the end of the quiz.  
-    Your final score: ${store.score}/100 
-  </div>  
-  <div>
-    <button type="button" id="restartbutton">Restart</button>
-  </div>
-   
-  `
+    `
+      <div id="finalScore">
+        You have reached the end of the quiz.  
+        Your final score: ${store.score}/100 
+      </div>  
+      <div>
+        <button type="button" id="restartbutton">Restart</button>
+      </div>
+    
+    `
   main.innerHTML = endquizMessage;
-document.getElementById("restartbutton").addEventListener("click", restartQuiz);
-
+  document.getElementById("restartbutton").addEventListener("click", restartQuiz);
 }
 
-
-//Render functions
+//Main content of quiz
 renderQuiz = () => {
   main.style.opacity=.85;
-  console.log("rendering the quiz");
   store.quizStarted = true;
   document.getElementById("start").innerHTML = "";
-  //question
-  
   let questionAndanswers = 
-  `
-  <div id = "status">
-      <div id="questionumber">
-      Question: ${store.questionNumber+1}/5
-      </div>
+    `
+    <div id = "status">
+        <div id="questionumber">
+        Question: ${store.questionNumber+1}/5
+        </div>
 
-      <div id="score">
-        Current score: ${store.score}/100
-      </div>
-  </div>
+        <div id="score">
+          Current score: ${store.score}/100
+        </div>
+    </div>
 
-  <div id= "question">
-    ${store.questions[store.questionNumber].question}
-  </div> 
-  
-  <div>
-    <form id="answerForm">
-      <ul class="answer-list">
-        ${store.questions[store.questionNumber].answers.map((answerkey, i) => 
-          `<li>
-            <input type="radio" id="${i}" name="answerkey" value="${answerkey}" required="required" />
-            <label for="${i}">${answerkey}</label>
-            </li>`).join("")
-          }
-      </ul>
-      <button type="submit" id="checkButton">Submit</button>
-      
-    </form>
-  </div>
-
-  
-
-`;
-main.innerHTML=questionAndanswers;
-document.getElementById("answerForm").addEventListener("submit", checkAnswer);
-
-
-
+    <div id= "question">
+      ${store.questions[store.questionNumber].question}
+    </div> 
+    
+    <div>
+      <form id="answerForm">
+        <ul class="answer-list">
+          ${store.questions[store.questionNumber].answers.map((answerkey, i) => 
+            `<li>
+              <input type="radio" id="${i}" name="answerkey" value="${answerkey}" required="required" />
+              <label for="${i}">${answerkey}</label>
+              </li>`).join("")
+            }
+        </ul>
+        <button type="submit" id="checkButton">Submit</button>
+        
+      </form>
+    </div>
+    `;
+  main.innerHTML=questionAndanswers;
+  document.getElementById("answerForm").addEventListener("submit", checkAnswer);
 };
   
   
@@ -269,14 +219,9 @@ restartQuiz = () => {
   firstPage();
 }
 
-
-
-
-
-
 window.onload = firstPage();
 
-//Event Handeler functions - these functions could only work after the DOM has been fully loaded
+
 
 
 
